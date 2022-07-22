@@ -21,75 +21,84 @@
       rel="stylesheet"
     />
 
-    <title>Devchallenges</title>
+    <title>Not found</title>
 
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
+      * {
+        margin: 0%;
+        padding: 0%;
+      }
       body {
-        font-family: "Poppins", sans-serif;
+        font-family: "Space Mono", monospace;
+      }
+      .container {
+        margin: 200px auto;
+        max-width: 1000px;
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
+        grid-template-areas:
+          "image contend"
+          "image contend";
+      }
+      .container .contend {
+        padding: 20px;
+        grid-area: contend;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+        font-size: large;
+      }
+      .container .contend .parrafo {
+        width: 381px;
+        line-height: 50px;
+      }
+      .container .image {
+        grid-area: image;
+        height: 447px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+      }
+      .buttom {
+        width: 216px;
+        height: 66px;
+        margin-top: 10px;
+        background-color: #2a2b2f;
+        color: #e5eaf0;
+      }
+      h1 {
+        font-weight: bold;
+      }
+      p {
+        color: #2a2b2f;
       }
 
-      ul {
-        padding-left: 24px;
-      }
-
-      li {
-        margin-bottom: 8px;
-      }
-
-      .welcome {
-        max-width: 800px;
-        margin: 0 auto;
-      }
-
-      .welcome-text {
-        margin-top: 30vh;
-        font-weight: 500;
-      }
-
-      .welcome-text p {
-        font-size: 1rem;
-        font-weight: 400;
-      }
-
-      .welcome-text h1 {
-        font-size: 1.5rem;
-      }
-
-      .welcome-text a {
-        color: #f7542e;
+      @media (max-width: 600px) {
+        .container {
+          grid-template-areas:
+            "image image"
+            "contend contend";
+        }
       }
     </style>
   </head>
   <body>
-    <div class="welcome">
-      <div class="welcome-text">
-        <h1>
-          Welcome to
-          <a href="https://devchallenges.io/" target="_blank"
-            >devchallenges.io</a
-          >
-        </h1>
-
-        <p>
-          If you have any questions, don't hesitate to ask on Discord. Here are
-          7 general steps to complete the challenge:
+    <div class="container">
+      <img class="image" src="Scarecrow.png" alt="this image not found" />
+      <div class="contend">
+        <h1 class="titulo">I have bad news for you</h1>
+        <p class="parrafo">
+          The page you are looking for might be removed or is temporarily
+          unavailable
         </p>
+        <input type="submit" class="buttom" />
       </div>
-
-      <ul>
-        <li><b>Step 1:</b> Create a new repository on github</li>
-        <li><b>Step 2:</b> Copy resources, README.md to your repository</li>
-        <li>
-          <b>Step 3:</b> Login to Figma to checkout font, color, spacing,..
-        </li>
-        <li><b>Step 4:</b> Complete all user stories</li>
-        <li><b>Step 5:</b> Update README.md</li>
-        <li><b>Step 6:</b> Deploy your app and submit your solution</li>
-        <li>
-          <b>Step 7:</b> Share your solution on Discord, Twitter and other
-          platforms to ask for feedback
-        </li>
-      </ul>
     </div>
   </body>
 </html>
